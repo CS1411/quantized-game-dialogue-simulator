@@ -1,0 +1,37 @@
+=== prompt: Brenna: (seed 0, temperature 0.8)
+Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.
+You: I can take care of the bandits.
+Brenna: It is not safe. Not with a cold wind and the marsh trolls about.
+Brenna: Do not forget your amber charm.
+
+Old Tam: They say cave spiders walk the road to Gull Point after dark.
+You: Tell me about Ash Road.
+Old Tam: They say re
+
+=== prompt: Old Tam: (seed 0, temperature 0.8)
+Old Tam: Come back alive, and I will have twenty gold waiting.
+
+Pip the Merchant: Business is slow with the bandits on the road. Everything is half price in a cold wind.
+You: What do you have for sale?
+Pip the Merchant: Fresh stock! A lantern for only five gold, and I never lie about lantern prices.
+You: Do you know anything about the restless skeletons?
+P
+
+=== prompt: Captain Vael: (seed 0, temperature 0.8)
+Captain Vael: We are short of men. Clear Gull Point and the guard will pay you ten gold.
+You: I am only passing through.
+Captain Vael: Halt. The gate is closed until the bandits are driven from Glass Caves.
+Captain Vael: Do not forget your lantern.
+
+Captain Vael: Halt. The gate is closed until the cave spiders are driven from Thornwick Keep.
+You: Tell me about 
+
+=== prompt: Sister Mara: (seed 0, temperature 0.8)
+Sister Mara: Come back alive, and I will have twenty gold waiting.
+
+Pip the Merchant: Business is slow with the bandits on the road. Everything is half price in a cold wind.
+You: What do you have for sale?
+Pip the Merchant: Fresh stock! A lantern for only five gold, and I never lie about lantern prices.
+You: Do you know anything about the restless skeletons?
+P
+
