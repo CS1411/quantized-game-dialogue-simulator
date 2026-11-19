@@ -12,7 +12,7 @@ Train a small GPT on game dialogue, shrink it with post-training quantization, a
 
 ## Milestones
 
-- [ ] **1. Prepare a small game dialogue text corpus.**
+- [x] **1. Prepare a small game dialogue text corpus.**
 - [ ] **2. Implement a basic GPT architecture and train it on the corpus.**
 - [ ] **3. Generate sample dialogue from the trained GPT.**
 - [ ] **4. Apply dynamic and static post-training quantization to the model.**
