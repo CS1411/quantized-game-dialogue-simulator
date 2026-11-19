@@ -1,0 +1,10 @@
+565,019 characters, vocabulary 49, 822,272 parameters
+step   250  train 0.527  val 0.478  52s
+step   500  train 0.175  val 0.189  107s
+step   750  train 0.153  val 0.153  160s
+step  1000  train 0.140  val 0.141  215s
+step  1250  train 0.131  val 0.132  270s
+step  1500  train 0.124  val 0.127  324s
+step  1750  train 0.121  val 0.123  379s
+step  2000  train 0.119  val 0.123  432s
+saved model/gpt.pt
