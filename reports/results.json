@@ -1,0 +1,319 @@
+{
+ "config": {
+  "vocab_size": 49,
+  "block_size": 128,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128
+ },
+ "context": 128,
+ "ops_per_token": {
+  "linear_macs": 792704,
+  "attention_macs": 131072,
+  "total_macs": 923776
+ },
+ "devices": {
+  "phone-class CPU": {
+   "macs_per_s": 4000000000.0,
+   "int8_speedup": 4.0,
+   "bandwidth": 8000000000.0,
+   "ram": 67108864
+  },
+  "microcontroller-class": {
+   "macs_per_s": 50000000.0,
+   "int8_speedup": 4.0,
+   "bandwidth": 200000000.0,
+   "ram": 1048576
+  }
+ },
+ "variants": [
+  {
+   "name": "fp32 (original)",
+   "bits": 32,
+   "val_loss": 0.12338481135666371,
+   "perplexity": 1.1313196420669556,
+   "top1_agreement": 1.0,
+   "max_logit_diff": 0.0,
+   "size_bytes": 3289088.0,
+   "weight_bytes": 3170816.0,
+   "file_bytes": 3305924,
+   "size_ratio": 1.0,
+   "wall_ms": 5.096599998068996,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nBrenna: Do not forget your amber charm.\n\nOld Tam: They say cave spiders walk the road to Gull Point after dark.",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 0.000230944,
+     "memory_s": 0.000411136,
+     "token_s": 0.000411136,
+     "tokens_per_s": 2432.285180572852,
+     "bound": "memory",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.01847552,
+     "memory_s": 0.01644544,
+     "token_s": 0.01847552,
+     "tokens_per_s": 54.1256754884301,
+     "bound": "compute",
+     "fits_in_ram": false
+    }
+   }
+  },
+  {
+   "name": "int8 dynamic (PyTorch)",
+   "bits": 8,
+   "val_loss": 0.12363707646727562,
+   "perplexity": 1.1316051483154297,
+   "top1_agreement": 0.99560546875,
+   "max_logit_diff": 3.1720640659332275,
+   "size_bytes": 911044.0,
+   "weight_bytes": 792704.0,
+   "file_bytes": 939998,
+   "size_ratio": 3.610240559182652,
+   "wall_ms": 5.319500000041444,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nBrenna: Do not forget your amber charm.\n\nOld Tam: They say cave spiders walk the road to Gull Point after dark.",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 0.0001138805,
+     "token_s": 0.0001138805,
+     "tokens_per_s": 8781.13461040301,
+     "bound": "memory",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00455522,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int8 dynamic (ours)",
+   "bits": 8,
+   "val_loss": 0.12343191318213939,
+   "perplexity": 1.1313729286193848,
+   "top1_agreement": 0.99775390625,
+   "max_logit_diff": 1.0319478511810303,
+   "size_bytes": 929604.0,
+   "weight_bytes": 792704.0,
+   "file_bytes": 974942,
+   "size_ratio": 3.538160334938318,
+   "wall_ms": 7.8390999988187104,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nBrenna: Do not forget your amber charm.\n\nOld Tam: They say cave spiders walk the road to Gull Point after dark.",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 0.0001162005,
+     "token_s": 0.0001162005,
+     "tokens_per_s": 8605.814949161148,
+     "bound": "memory",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00464802,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int8 static (ours)",
+   "bits": 8,
+   "val_loss": 0.1234797216951847,
+   "perplexity": 1.1314270496368408,
+   "top1_agreement": 0.9978515625,
+   "max_logit_diff": 1.0108699798583984,
+   "size_bytes": 929740.0,
+   "weight_bytes": 792704.0,
+   "file_bytes": 984525,
+   "size_ratio": 3.537642781852991,
+   "wall_ms": 6.957199999305885,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nBrenna: Do not forget your amber charm.\n\nOld Tam: They say cave spiders walk the road to Gull Point after dark.",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 0.0001162175,
+     "token_s": 0.0001162175,
+     "tokens_per_s": 8604.556112461549,
+     "bound": "memory",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.0046487,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int6 weights, dynamic",
+   "bits": 6,
+   "val_loss": 0.12356338910758495,
+   "perplexity": 1.1315217018127441,
+   "top1_agreement": 0.99599609375,
+   "max_logit_diff": 1.5362577438354492,
+   "size_bytes": 731428.0,
+   "weight_bytes": 594528.0,
+   "file_bytes": 974942,
+   "size_ratio": 4.496803513127745,
+   "wall_ms": 7.927600003313273,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nYou: I can take care of the bandits.\nBrenna: The cave spiders near Ash Road keep breaking my best blades. Bring",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 9.14285e-05,
+     "token_s": 9.14285e-05,
+     "tokens_per_s": 10937.50854492855,
+     "bound": "memory",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00365714,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int4 weights, dynamic",
+   "bits": 4,
+   "val_loss": 0.12537757568061353,
+   "perplexity": 1.1335763931274414,
+   "top1_agreement": 0.98623046875,
+   "max_logit_diff": 4.631338119506836,
+   "size_bytes": 533252.0,
+   "weight_bytes": 396352.0,
+   "file_bytes": 974942,
+   "size_ratio": 6.167980617044099,
+   "wall_ms": 7.789700001012534,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nYou: I can take care of the bandits.\nBrenna: The cave spiders near Ash Road keep breaking my best blades. Bring",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 6.66565e-05,
+     "token_s": 8.2312e-05,
+     "tokens_per_s": 12148.896880163282,
+     "bound": "compute",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00266626,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int3 weights, dynamic",
+   "bits": 3,
+   "val_loss": 0.14871131032705306,
+   "perplexity": 1.1603379249572754,
+   "top1_agreement": 0.960791015625,
+   "max_logit_diff": 14.850435256958008,
+   "size_bytes": 434164.0,
+   "weight_bytes": 297264.0,
+   "file_bytes": 974942,
+   "size_ratio": 7.575681079039257,
+   "wall_ms": 7.8289999946719036,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine healing potion will cost you ten gold.\nYou: How ald and the and the stless skeletons about.\nYou: I will do it. What is the rewand?\nBrenna: It is not safeen tor me to Thornwick Keep.\nYou: I will do it. What is the reward?\nBrenna: It is not safeever rin fom the b",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 5.42705e-05,
+     "token_s": 8.2312e-05,
+     "tokens_per_s": 12148.896880163282,
+     "bound": "compute",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00217082,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int2 weights, dynamic",
+   "bits": 2,
+   "val_loss": 4.035776722431183,
+   "perplexity": 56.586849212646484,
+   "top1_agreement": 0.28623046875,
+   "max_logit_diff": 30.5477294921875,
+   "size_bytes": 335076.0,
+   "weight_bytes": 198176.0,
+   "file_bytes": 974942,
+   "size_ratio": 9.815946233093388,
+   "wall_ms": 7.848699999158271,
+   "sample": "Brenna: tlf mewme wnhewllf ren rewmank ow wfl reswis K wow Bftfte te r re dofofof mee rey Rowavesiw wa ofof tlco m of me the yofou my eKp me se lp me me se Rfk!  eollon tuy RyoP ea Rsesk Rom k k! theeof  tusshe the tre the folcl m me   fofou  thunhe the g g Bunhe founhe m?\n the the s the thuny Bre P me The",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 4.18845e-05,
+     "token_s": 8.2312e-05,
+     "tokens_per_s": 12148.896880163282,
+     "bound": "compute",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00167538,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  },
+  {
+   "name": "int4 weights, static",
+   "bits": 4,
+   "val_loss": 0.12541767172515392,
+   "perplexity": 1.1336218118667603,
+   "top1_agreement": 0.98515625,
+   "max_logit_diff": 5.214683532714844,
+   "size_bytes": 533388.0,
+   "weight_bytes": 396352.0,
+   "file_bytes": 984525,
+   "size_ratio": 6.166407943185823,
+   "wall_ms": 6.646500005444977,
+   "sample": "Brenna: Welcome to my forge, traveler. A fine hunting bow will cost you fifteen gold.\nYou: I can take care of the bandits.\nBrenna: It is not safe. Not with a cold wind and the marsh trolls about.\nYou: I can take care of the bandits.\nBrenna: The cave spiders near Ash Road keep breaking my best blades. Bring",
+   "simulated": {
+    "phone-class CPU": {
+     "compute_s": 8.2312e-05,
+     "memory_s": 6.66735e-05,
+     "token_s": 8.2312e-05,
+     "tokens_per_s": 12148.896880163282,
+     "bound": "compute",
+     "fits_in_ram": true
+    },
+    "microcontroller-class": {
+     "compute_s": 0.00658496,
+     "memory_s": 0.00266694,
+     "token_s": 0.00658496,
+     "tokens_per_s": 151.86121100204102,
+     "bound": "compute",
+     "fits_in_ram": true
+    }
+   }
+  }
+ ]
+}
